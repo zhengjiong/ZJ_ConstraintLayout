@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--ratio这个属性是用来控制控件的宽和高的大小。使用ratio的前提是该控件至少有一个大小为0dp，
+    在ConstraintLayout布局中0dp代表MATCH_CONSTRAINT，你可能会疑惑，不是match_parent嘛，
+    怎么变match_constraint了，你没看错，在ConstraintLayout布局中摒弃了match_parent，
+    使用了match_constraint来代替。
+
+    比率的取值有两种形式：
+        – float 值，代表宽度/高度 的比率
+        – “宽度:高度”这种比率值
+    -->
+
+
+    <!--
+    1.宽度使用0dp, 高度使用wrap_content
+    -->
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!--
+    2.高度使用0dp, 宽度使用wrap_content,
+    目前没搞懂1和2的区别
+    -->
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#c88ba4"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!--
+    3.高度使用0dp, 宽度也使用0dp
+
+    如果宽度和高度都是 MATCH_CONSTRAINT (0dp) 也可以使用宽高比。这种情况，系统会使
+    用满足所有约束条件和比率的最大尺寸。要根据其中一种尺寸来约束另外一种尺寸，则可以在比
+    率值的前面添加 W 或者 H来分别约束宽度或者高度。例如，如果一个尺寸被两个目标约束（比
+    如宽度为0dp，在父容器中居中），你通过使用字符 W 或者 H 来指定那个边被约束。
+
+    代表宽度为100dp, 约束高度为宽度的1.5倍, 高度=100dp*1.5
+    -->
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="#fdac67"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        app:layout_constraintDimensionRatio="h,1:1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!--
+    代表宽度为100dp, 约束宽度为高度的1.5倍, 宽度=100dp/1.5
+    -->
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="#1680f5"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/text3"
+        app:layout_constraintDimensionRatio="w,1:1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</android.support.constraint.ConstraintLayout>

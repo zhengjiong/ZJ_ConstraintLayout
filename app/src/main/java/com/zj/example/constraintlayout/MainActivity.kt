@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val list = listOf(
                 mapOf("text" to "constraintWidth_default demo", "layout" to R.layout.demo1_constraintwith_default_layout),
                 mapOf("text" to "bias demo", "layout" to R.layout.demo2_constraint_bias_layout),
+                mapOf("text" to "ratio demo", "layout" to R.layout.demo3_constraint_ratio_layout),
                 mapOf("text" to "Barrier demo")
         )
 
