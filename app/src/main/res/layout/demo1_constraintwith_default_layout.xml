@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--
+    当控件设置为0dp的时候（0dp的又叫match_constraint），
+    默认的行为是撑开（spread），占满可用空间，但是这个行为是可以
+    用layout_constraintWidth_default 属性来设置的。
+    -->
+
+    <!--1.默认为情况, layout_constraintWidth_default加不加都可以-->
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorAccent"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintWidth_default="spread"/>
+
+    <!--2.使用百分比, 要注意和layout_constraintHorizontal_bias的不同点,
+        这里不加layout_constraintWidth_default也可以, 但是加上最好
+    -->
+    <TextView
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5"
+        />
+
+    <!--3.使用百分比和bias混合使用, 要注意和layout_constraintHorizontal_bias的不同点-->
+    <TextView
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5"
+
+        app:layout_constraintHorizontal_bias="0.1"
+        />
+    <!--4.
+        layout_constraintWidth_default设置为wrap
+        layout_constraintHeight_default设置为wrap
+        宽度会根据内部控件的大小确定自身宽度
+    -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintHeight_default="wrap"
+
+        app:layout_constraintTop_toBottomOf="@+id/view3">
+        <TextView
+            android:id="@+id/view4_child1"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/view4_child2"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:background="#58c7fd"
+            />
+        <TextView
+            android:id="@+id/view4_child2"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+
+            app:layout_constraintLeft_toRightOf="@+id/view4_child1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:background="#e763fc"
+            />
+    </android.support.constraint.ConstraintLayout>
+    <!--5.
+        不使用default属性, 使用wrap_content也可以达到相同的效果,
+        推荐使用4
+    -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/view4">
+        <TextView
+            android:id="@+id/view5_child1"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/view5_child2"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:background="#e763fc"
+            />
+        <TextView
+            android:id="@+id/view5_child2"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+
+            app:layout_constraintLeft_toRightOf="@+id/view5_child1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:background="#58c7fd"
+            />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
