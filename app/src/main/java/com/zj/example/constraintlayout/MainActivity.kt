@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val list = listOf(
-                mapOf("text" to "constraintWidth_default demo", "layout" to R.layout.demo1_constraintwith_default_layout),
+                mapOf("text" to "bias是改变位置, precent是改变大小, ratio是用比例来改变大小", "layout" to 0),
+                mapOf("text" to "default demo", "layout" to R.layout.demo1_constraintwith_default_layout),
                 mapOf("text" to "bias demo", "layout" to R.layout.demo2_constraint_bias_layout),
                 mapOf("text" to "ratio demo", "layout" to R.layout.demo3_constraint_ratio_layout),
+                mapOf("text" to "chains demo", "layout" to R.layout.demo4_chains_layout),
                 mapOf("text" to "Barrier demo")
         )
 
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         listview.setOnItemClickListener { adapterView, view, i, l ->
             val map = adapterView.adapter.getItem(i) as LinkedHashMap<String, *>
             val resId: Int = map["layout"] as Int
+            if (resId <= 0) return@setOnItemClickListener
             val intent = Intent(this@MainActivity, ExampleActivity::class.java)
             intent.putExtra("resId", resId)
             startActivity(intent)
