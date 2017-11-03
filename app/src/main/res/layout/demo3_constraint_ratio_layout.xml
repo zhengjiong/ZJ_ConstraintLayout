@@ -81,17 +81,35 @@
 
     <!--
     前面的1代表宽度, 后面的1.5代表高度
-    代表宽度为100dp, 约束宽度, 宽度=100dp/1.5
+    代表高度为100dp, 约束宽度, 宽度=100dp*1.5
     -->
     <TextView
         android:id="@+id/text4"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:background="#1680f5"
         android:gravity="center"
         android:text="text"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/text3"
+        app:layout_constraintDimensionRatio="w,1:1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <!--
+    代表宽度为100dp, 约束宽度, 但是宽度已经写死100dp了, 所以宽度不变, 高度=100dp/1.5
+    注意:前面的1代表高度, 后面的1.5代表宽度, 和其他的完全相反
+    -->
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="#fff784"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/text4"
         app:layout_constraintDimensionRatio="w,1:1.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
