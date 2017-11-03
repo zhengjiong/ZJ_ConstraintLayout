@@ -11,6 +11,8 @@
 
       app:layout_constraintHorizontal_weight=”1”属性实现了三个控件均分整个宽度，
       这跟linearlayout中的weight有点像
+
+      Weighted Chain模式:
     -->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/view1"
@@ -58,8 +60,8 @@
     </android.support.constraint.ConstraintLayout>
 
     <!--
-        2.设置weight为不同的值
-        Weighted Chain模式
+        2.Weighted Chain模式
+        设置weight为不同的值
     -->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/view2"
@@ -111,16 +113,8 @@
     </android.support.constraint.ConstraintLayout>
 
     <!--
-    3.刚刚其实我们已经见过一种效果了，即按照weight等分，可以成为weighted chain。
-    此时chainHead 设置chainStyle=”spread”，所有控件宽度设置为match_constraint（0dp），
-    因为默认就是spread，所以我们没有显示设置。就是我们上面显示的效果。
-    下面看看packed、spread、spread inside。我们把控件的宽度由0dp改为一个确定的大小，如100dp。
-    style为packed
-
-    这个时候设置layout_constraintHorizontal_weight是没有效果的
-
-    注意:宽度设置为0dp后, chains默认是weight chains模式, weight默认是1, 可以不用写.
-        如果宽度为固定的值, chains默认为spread模式, 这里为spread模式
+    3.宽度设置为0后, chains默认是weight chains模式, weight默认是1, 可以不用写.
+    如果宽度为固定的值, chains默认为spread模式,这个时候设置layout_constraintHorizontal_weight是没有效果的
     -->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/view3"
