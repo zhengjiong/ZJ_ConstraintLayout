@@ -7,9 +7,14 @@
 
 
     <!--
+    自己总结:
+    layout_constraintWidth_default是用来控制当控件设置为0dp时候的怎么来占据空间的。
+
     当控件设置为0dp的时候（0dp的又叫match_constraint），
     默认的行为是撑开（spread），占满可用空间，但是这个行为是可以
     用layout_constraintWidth_default 属性来设置的。
+    在 ConstraintLayout 1.0.x中，这个属性还可以把它设置为wrap。
+    而到了1.1.x，它又有了一个新的值：percent，允许我们设置控件占据可用空间的百分比。
     -->
 
     <!--1.width设置为0dp,默认default为spread是占满的情况情况,

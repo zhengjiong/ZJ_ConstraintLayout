@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <!--
-    1.外层可以不加chains属性, 直接使用left和right来构成chains
+    1.外层可以不加chains属性, 直接使用left和right互相依赖来构成chains
       注意:宽度设置为0后, chains默认是weight chains模式, weight默认是1, 可以不用写.
         如果宽度为固定的值, chains默认为spread模式
 
@@ -258,6 +258,56 @@
             android:text="child3"
             android:textColor="@android:color/white"
             app:layout_constraintLeft_toRightOf="@+id/view5_child2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <!--5. PACKED chains with bias-->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5">
+
+        <TextView
+            android:id="@+id/view6_child1"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="child1"
+            app:layout_constraintHorizontal_bias="0.2"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/view6_child2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view6_child2"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="#bd71a1"
+            android:gravity="center"
+            android:text="child2"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/view6_child1"
+            app:layout_constraintRight_toLeftOf="@+id/view6_child3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view6_child3"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="#48c23d"
+            android:gravity="center"
+            android:text="child3"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/view6_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>

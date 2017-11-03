@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val list = listOf(
                 mapOf("text" to "bias是改变位置, precent是改变大小, ratio是用比例来改变大小", "layout" to 0),
-                mapOf("text" to "default demo", "layout" to R.layout.demo1_constraintwith_default_layout),
+                mapOf("text" to "default demo, 当控件设置为0dp的时候（0dp的称呼又叫match_constraint），默认的行为是撑开（spread），占满可用空间，但是这个行为是可以用layout_constraintWidth_default 属性来设置的", "layout" to R.layout.demo1_constraintwith_default_layout),
                 mapOf("text" to "bias demo", "layout" to R.layout.demo2_constraint_bias_layout),
                 mapOf("text" to "ratio demo", "layout" to R.layout.demo3_constraint_ratio_layout),
                 mapOf("text" to "chains demo", "layout" to R.layout.demo4_chains_layout),
