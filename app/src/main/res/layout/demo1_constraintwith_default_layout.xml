@@ -28,7 +28,7 @@
 
     <!--2.使用百分比, 要注意和layout_constraintHorizontal_bias的不同点,
         这里不加layout_constraintWidth_default也可以, 但是加上最好;
-        bias是改变位置, precent是改变大小, ratio是用比例来改变大小
+        bias是改变位置, precent是改变大小, ratio是用长宽比例来改变大小
     -->
     <TextView
         android:id="@+id/view2"
@@ -138,6 +138,15 @@
             android:background="#58c7fd"
             />
     </android.support.constraint.ConstraintLayout>
+
+    <!--
+    实现linearlayout的weight效果
+    6.
+    注意:
+    (1) weight chains模式可以实现(chains需要每个控件互相依赖),
+    (2) default+bias也可以实现这种效果(left和right需要依赖parent)
+    使用default和bias来实现这种效果
+    -->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/view6"
         android:layout_width="0dp"
@@ -160,8 +169,10 @@
             app:layout_constraintWidth_percent="0.333"
 
             app:layout_constraintHorizontal_bias="0"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
@@ -174,6 +185,7 @@
             app:layout_constraintWidth_percent="0.333"
 
             app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
