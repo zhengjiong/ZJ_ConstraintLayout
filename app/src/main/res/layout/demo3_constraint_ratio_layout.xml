@@ -80,8 +80,11 @@
         />
 
     <!--
-    前面的1代表宽度, 后面的1.5代表高度
+    4.前面的1代表宽度, 后面的1.5代表高度
     代表高度为100dp, 约束宽度, 宽度=100dp*1.5
+    注意:和6例子不一样的是,这里高度不是设置为0dp, 而是一个固定值, 所以
+    w,1:1.5, 并不是高度:宽度=1:1.5, 还是宽度:高度=1:1.5, 只有当宽高
+    都等于0dp的时候, 才是(见6)
     -->
     <TextView
         android:id="@+id/text4"
@@ -98,7 +101,7 @@
         />
 
     <!--
-    代表宽度为100dp, 约束宽度, 但是宽度已经写死100dp了, 所以宽度不变, 高度=100dp/1.5
+    5.代表宽度为100dp, 约束宽度, 但是宽度已经写死100dp了, 所以宽度不变, 高度=100dp/1.5
     注意:前面的1代表高度, 后面的1.5代表宽度, 和其他的完全相反
     -->
     <TextView
@@ -111,6 +114,27 @@
         android:textColor="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@+id/text4"
         app:layout_constraintDimensionRatio="w,1:1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <!--
+    6.宽和高都设置为0dp, ratio设置为5:1(不加h或者w, 默认就是h,5:1),也就是宽度:高度=5:1,
+    5:1 等价于 h,5:1,宽度:高度=5:1,
+    w,5:1, 高度:宽度 5:1
+
+    注意:只有当宽高都设置为0dp的时候, 宽度和高度的比才会反过来, 如果有一个是固定值,
+    都不会反过来(见4)
+    -->
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#fd68fb"
+        android:gravity="center"
+        android:text="text"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/text5"
+        app:layout_constraintDimensionRatio="h,5:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
