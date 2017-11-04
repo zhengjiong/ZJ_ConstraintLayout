@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 mapOf("text" to "Chains demo", "layout" to R.layout.demo4_chains_layout),
                 mapOf("text" to "GuideLine demo", "layout" to R.layout.demo5_guideline_layout),
                 mapOf("text" to "Barriers demo", "layout" to R.layout.demo6_barriers_layout),
+                mapOf("text" to "Group demo", "layout" to R.layout.demo7_group_layout),
                 mapOf("text" to "Barrier demo")
         )
 
