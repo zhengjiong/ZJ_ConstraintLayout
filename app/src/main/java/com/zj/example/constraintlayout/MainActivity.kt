@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 mapOf("text" to "Ratio demo", "layout" to R.layout.demo3_constraint_ratio_layout),
                 mapOf("text" to "Chains demo", "layout" to R.layout.demo4_chains_layout),
                 mapOf("text" to "GuideLine demo", "layout" to R.layout.demo5_guideline_layout),
+                mapOf("text" to "Barriers demo", "layout" to R.layout.demo6_barriers_layout),
                 mapOf("text" to "Barrier demo")
         )
 
