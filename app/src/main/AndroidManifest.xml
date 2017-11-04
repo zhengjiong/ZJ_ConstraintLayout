@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ExampleActivity"/>
+        <activity android:name=".PlaceHolderExample"/>
     </application>
 
 </manifest>

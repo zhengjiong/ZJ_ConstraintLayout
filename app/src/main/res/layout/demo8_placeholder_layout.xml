@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:id="@+id/root"
+                                             xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".PlaceHolderExample"
+                                             tools:showIn="@layout/demo8_placeholder_layout">
+
+    <ImageView
+        android:id="@+id/top_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/place_holder_demo"/>
+
+    <!--模版写好了我们来填充真正的东西。
+
+    我们把刚才定义的模版include到真正的布局文件中，并且在这个布局文件中添加真实的控件，注意这里的控件无需添加任何约束，因为它们的位置是由Placeholder决定的。
+
+    还有一点就是模版要放在被引用的所有控件之前：-->
+
+    <include layout="@layout/template"/>
+
+    <ImageButton
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_save_black_24dp"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/save"
+        app:srcCompat="@drawable/ic_edit_black_24dp"
+        tools:layout_editor_absoluteX="58dp"/>
+
+    <ImageButton
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edit"
+        app:srcCompat="@drawable/ic_cancel_black_24dp"
+        tools:layout_editor_absoluteX="116dp"/>
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:srcCompat="@drawable/ic_delete_black_24dp"
+        tools:layout_editor_absoluteX="187dp"/>
+
+</android.support.constraint.ConstraintLayout>

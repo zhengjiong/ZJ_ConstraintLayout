@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 mapOf("text" to "GuideLine demo", "layout" to R.layout.demo5_guideline_layout),
                 mapOf("text" to "Barriers demo", "layout" to R.layout.demo6_barriers_layout),
                 mapOf("text" to "Group demo", "layout" to R.layout.demo7_group_layout),
+                mapOf("text" to "PlaceHolder demo", "layout" to PlaceHolderExample::class.java),
                 mapOf("text" to "Barrier demo")
         )
 
@@ -39,12 +40,22 @@ class MainActivity : AppCompatActivity() {
         )
 
         listview.setOnItemClickListener { adapterView, view, i, l ->
-            val map = adapterView.adapter.getItem(i) as LinkedHashMap<String, *>
-            val resId: Int = map["layout"] as Int
-            if (resId <= 0) return@setOnItemClickListener
-            val intent = Intent(this@MainActivity, ExampleActivity::class.java)
-            intent.putExtra("resId", resId)
-            startActivity(intent)
+            val map = adapterView.adapter.getItem(i) as Map<String, *>
+            val value = map["layout"]
+            when (value) {
+                is Int -> {
+                    if (value <= 0) return@setOnItemClickListener
+                    val intent = Intent(this@MainActivity, ExampleActivity::class.java)
+                    intent.putExtra("resId", value)
+                    startActivity(intent)
+                }
+                is Class<*> -> {
+                    startActivity(Intent(this@MainActivity, value))
+                }
+                else -> {
+
+                }
+            }
         }
     }
 }
