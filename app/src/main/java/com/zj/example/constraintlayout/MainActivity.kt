@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                 mapOf("text" to "PlaceHolder demo", "layout" to R.layout.demo8_placeholder_layout),
                 mapOf("text" to "PlaceHolder demo", "layout" to PlaceHolderExample::class.java),
                 mapOf("text" to "Backgrounds demo", "layout" to R.layout.demo10_backgrounds_layout),
+                mapOf("text" to "Circle demo", "layout" to R.layout.demo11_circle_layout),
                 mapOf("text" to "Barrier demo")
         )
 

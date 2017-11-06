@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!--
+    它可以约束一个view相对于另一个view的弧度和半径。
+    view是以各自的中心为参照来约束的，跟通常以 start/end/top/bottom 或者 baseline 来约束是不同的
+
+    有了这种约束view的方式，一些平常很难实现的布局和动画实现起来就非常简单了。比如模拟行星的运动，
+    太阳在中心，行星绕着它做旋转。
+
+    如果没有ConstraintLayout的这个新功能的话，你可能会用自定义view和在canvas上绘制bitmaps来实现。
+    这样做是可行的，但可能需要做很多工作，而且要让行星与让自定义view外面的其它view交互非常困难。
+
+
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintCircle="@+id/btn1"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="100dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintCircle="@+id/btn1"
+        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleRadius="100dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintCircle="@+id/btn1"
+        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleRadius="100dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        app:layout_constraintCircle="@+id/btn1"
+        app:layout_constraintCircleAngle="315"
+        app:layout_constraintCircleRadius="100dp"/>
+</android.support.constraint.ConstraintLayout>
