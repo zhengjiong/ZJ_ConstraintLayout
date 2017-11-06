@@ -164,6 +164,57 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
+    <!--
+        3.1Weighted Chain模式
+        模仿Linearlayout的用法
+    -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/view3_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3">
+
+        <TextView
+            android:id="@+id/view3_1_child1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="child1"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/view3_1_child2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view3_1_child2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="#bd71a1"
+            android:gravity="center"
+            android:text="child2"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toRightOf="@+id/view3_1_child1"
+            app:layout_constraintRight_toLeftOf="@+id/view3_1_child3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view3_1_child3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="#48c23d"
+            android:gravity="center"
+            android:text="child3"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/view3_1_child2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
     <!--4. packed chains-->
     <android.support.constraint.ConstraintLayout
         android:id="@+id/view4"
@@ -173,7 +224,7 @@
         app:layout_constraintHeight_default="wrap"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3">
+        app:layout_constraintTop_toBottomOf="@+id/view3_1">
 
         <TextView
             android:id="@+id/view4_child1"
