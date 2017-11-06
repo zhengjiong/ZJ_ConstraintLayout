@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <!--
-    1.外层可以不加chains属性, 直接使用left和right互相依赖来构成chains
+    1.外层可以不加chains属性(有默认值), 直接使用left和right互相依赖来构成chains
       注意:宽度设置为0后, chains默认是weight chains模式, weight默认是1, 可以不用写.
         如果宽度为固定的值, chains默认为spread模式
 
