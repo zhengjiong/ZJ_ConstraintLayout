@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 mapOf("text" to "PlaceHolder demo", "layout" to PlaceHolderExample::class.java),
                 mapOf("text" to "Backgrounds demo", "layout" to R.layout.demo10_backgrounds_layout),
                 mapOf("text" to "Circle demo", "layout" to R.layout.demo11_circle_layout),
-                mapOf("text" to "Barrier demo")
+                mapOf("text" to "Circle demo 2", "layout" to CircleExample::class.java)
         )
 
         listview.adapter = SimpleAdapter(
