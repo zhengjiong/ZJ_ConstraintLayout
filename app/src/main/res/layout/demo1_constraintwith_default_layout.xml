@@ -166,7 +166,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="0dp"
 
             android:background="#58c7fd"
 
@@ -174,7 +174,7 @@
             app:layout_constraintWidth_percent="0.333"
 
             app:layout_constraintHorizontal_bias="0"
-
+            app:layout_constraintDimensionRatio="h,1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
 
