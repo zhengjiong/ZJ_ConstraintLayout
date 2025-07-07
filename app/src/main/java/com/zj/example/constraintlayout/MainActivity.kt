@@ -2,9 +2,9 @@ package com.zj.example.constraintlayout
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.widget.ListView
 import android.widget.SimpleAdapter
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
 
 
 /**
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val listview = findViewById<ListView>(R.id.listview)
         val list = listOf(
                 mapOf("text" to "Bias是改变位置, precent是改变大小, ratio是用比例来改变大小", "layout" to 0),
                 mapOf("text" to "Default demo, 当控件设置为0dp的时候（0dp的称呼又叫match_constraint），默认的行为是撑开（spread），占满可用空间，但是这个行为是可以用layout_constraintWidth_default 属性来设置的", "layout" to R.layout.demo1_constraintwith_default_layout),

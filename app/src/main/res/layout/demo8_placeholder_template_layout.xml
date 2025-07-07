@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:parentTag="android.support.constraint.ConstraintLayout">
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
     <!--用Placeholder创建一个名为template.xml的模版：-->
 
-    <!--注意我们在这里使用了 tools:parentTag="android.support.constraint.ConstraintLayout"，
+    <!--注意我们在这里使用了 tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"，
     这样在编辑的时候就会让它按照ConstraintLayout来处理。-->
 
     <!--每个PlaceHolder都设置了自己的app:content属性，比如app:content="@+id/edit"，表示用id为edit的控件来填充这个位置。-->

@@ -2,11 +2,11 @@ package com.zj.example.constraintlayout
 
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.animation.LinearInterpolator
-import kotlinx.android.synthetic.main.demo12_circle_layout.*
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.concurrent.TimeUnit
 
 /**
@@ -19,6 +19,10 @@ class CircleExample : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.demo12_circle_layout)
+
+        val earth = findViewById<ImageButton>(R.id.earth)
+        val mars = findViewById<ImageButton>(R.id.mars)
+        val saturn = findViewById<ImageButton>(R.id.saturn)
 
         val animEatch = createCircleAnim(earth, TimeUnit.SECONDS.toMillis(2))
         val animMars = createCircleAnim(mars, TimeUnit.SECONDS.toMillis(6))

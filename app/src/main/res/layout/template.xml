@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:parentTag="android.support.constraint.ConstraintLayout">
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
     <!--
     Placeholder顾名思义，就是用来一个占位的东西，它可以把自己的内容设置为
     ConstraintLayout内的其它view。因此它用来写布局的模版，也可以用来动态修改UI的内容。
     -->
-    <android.support.constraint.Placeholder
+    <androidx.constraintlayout.widget.Placeholder
         android:id="@+id/template_main_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <android.support.constraint.Placeholder
+    <androidx.constraintlayout.widget.Placeholder
         android:id="@+id/template_action"
         android:layout_width="48dp"
         android:layout_height="48dp"

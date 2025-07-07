@@ -1,18 +1,28 @@
 apply plugin: 'com.android.application'
+
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
 
+    namespace "com.zj.example.constraintlayout"
 
     defaultConfig {
         applicationId "com.zj.example.constraintlayout"
-        minSdkVersion 21
+        minSdkVersion 25
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17  // Java 源码兼容性
+        targetCompatibility JavaVersion.VERSION_17  // 生成的字节码目标版本
+    }
+    kotlinOptions {
+        jvmTarget = "17"  // Kotlin 编译目标版本
     }
 
     buildTypes {
@@ -26,7 +36,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }

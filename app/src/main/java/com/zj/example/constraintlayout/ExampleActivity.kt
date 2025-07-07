@@ -1,7 +1,7 @@
 package com.zj.example.constraintlayout
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  *
@@ -11,9 +11,9 @@ import android.support.v7.app.AppCompatActivity
 class ExampleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val resId = intent.extras.getInt("resId", 0)
+        val resId = intent.extras?.getInt("resId", 0)
         if (resId != 0) {
-            setContentView(resId)
+            setContentView(resId?:0)
         }
     }
 }

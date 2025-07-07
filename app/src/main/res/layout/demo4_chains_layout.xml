@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -14,7 +14,7 @@
 
       Weighted Chain模式:
     -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -57,13 +57,13 @@
             app:layout_constraintLeft_toRightOf="@+id/view1_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--
         2.Weighted Chain模式
         设置weight为不同的值
     -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -110,13 +110,13 @@
             app:layout_constraintLeft_toRightOf="@+id/view2_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--
     3.宽度设置为0后, chains默认是weight chains模式, weight默认是1, 可以不用写.
     如果宽度为固定的值, chains默认为spread模式,这个时候设置layout_constraintHorizontal_weight是没有效果的
     -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -162,13 +162,13 @@
             app:layout_constraintLeft_toRightOf="@+id/view3_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--
         3.1Weighted Chain模式
         模仿Linearlayout的用法
     -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view3_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -213,13 +213,13 @@
             app:layout_constraintLeft_toRightOf="@+id/view3_1_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--
         3.2Weighted Chain模式
         模仿Linearlayout的用法
     -->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view3_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -264,9 +264,9 @@
             app:layout_constraintLeft_toRightOf="@+id/view3_2_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <!--4. packed chains-->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view4"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -312,10 +312,10 @@
             app:layout_constraintLeft_toRightOf="@+id/view4_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--4. spread_inside chains-->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view5"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -361,10 +361,10 @@
             app:layout_constraintLeft_toRightOf="@+id/view5_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--5. PACKED chains with bias-->
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view6"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -411,5 +411,5 @@
             app:layout_constraintLeft_toRightOf="@+id/view6_child2"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

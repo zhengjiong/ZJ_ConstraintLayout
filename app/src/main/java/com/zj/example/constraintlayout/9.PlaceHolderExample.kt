@@ -1,11 +1,12 @@
 package com.zj.example.constraintlayout
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.transition.TransitionManager
 import android.view.View
-import kotlinx.android.synthetic.main.demo9_placeholder_layout.*
-import kotlinx.android.synthetic.main.template.*
+import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.Placeholder
 
 /**
  * https://juejin.im/entry/59e880376fb9a0452a3b707f
@@ -19,6 +20,12 @@ class PlaceHolderExample : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.demo9_placeholder_layout)
 
+        val save = findViewById<ImageButton>(R.id.save)
+        val root = findViewById<ConstraintLayout>(R.id.root)
+        val cancel = findViewById<ImageButton>(R.id.cancel)
+        val edit = findViewById<ImageButton>(R.id.edit)
+        val delete = findViewById<ImageButton>(R.id.delete)
+        val template_action = findViewById<Placeholder>(R.id.template_action)
 
         /*动态替换
 
