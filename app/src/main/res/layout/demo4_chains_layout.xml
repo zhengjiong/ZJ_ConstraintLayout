@@ -115,6 +115,11 @@
     <!--
     3.宽度设置为0后, chains默认是weight chains模式, weight默认是1, 可以不用写.
     如果宽度为固定的值, chains默认为spread模式,这个时候设置layout_constraintHorizontal_weight是没有效果的
+
+    layout_constraintHeight_default设置为wrap,
+    然后宽高设置为0dp, 宽度会根据内部控件的大小确定自身宽度,
+    这里也可以去掉app:layout_constraintHeight_default="wrap",
+    然后android:layout_height="wrap_content",效果也是一样的
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view3"

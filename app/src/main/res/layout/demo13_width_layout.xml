@@ -4,11 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--
+    layout_constraintWidth_max="wrap" 是一个特殊的属性值设置，
+    它表示视图的最大宽度不应超过其 wrap_content 计算出的宽度。
+    也就是最大不超过内容宽度
+
     layout_constraintWidth_max=wrap配合layout_width=0dp
     和
     layout_constrainedWidth=true配合layout_width=wrap_content
 
     两种都可以实现一样的效果
+
+
+    1.layout_constraintWidth_max属性用于设置视图的最大宽度限制，即使有其他约束条
+    件可能导致视图更宽，也不会超过这个最大值。
+
+    2.layout_constrainedWidth=true
+    这个属性决定了当视图的宽度设置为wrap_content时，是否仍然受到其他约束条件的影响。
+    比如:
+        2.1.即使设置了android:layout_width="wrap_content"，视图宽度仍然会受到约束限制
+        2.2.视图不会超过其约束边界（如parent边界或其他视图的约束）
+        2.3.在内容较少时表现为wrap_content，在内容较多时会被约束限制
+
     -->
     <Button
         android:id="@+id/btn1"
@@ -54,6 +70,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
+
+
+    <!--这里android:layout_width用wrap_content和0dp效果都一样-->
     <TextView
         android:id="@+id/tv3"
         android:layout_width="0dp"
@@ -72,6 +91,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintWidth_max="wrap" />
 
+
+    <!--这里android:layout_width只能用0dp-->
+    <!-- app:layout_constraintWidth_max="wrap"最大不超过内容宽度 -->
     <TextView
         android:id="@+id/tv4"
         android:layout_width="0dp"
@@ -81,7 +103,7 @@
         android:gravity="center_vertical"
         android:maxLines="1"
         android:singleLine="true"
-        android:text="测测测测测测"
+        android:text="测测测测测测测测测测测"
         android:textColor="#fff"
         android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn4"

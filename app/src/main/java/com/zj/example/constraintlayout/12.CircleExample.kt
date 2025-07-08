@@ -4,8 +4,8 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
 import android.view.animation.LinearInterpolator
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.concurrent.TimeUnit
 
@@ -20,9 +20,9 @@ class CircleExample : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.demo12_circle_layout)
 
-        val earth = findViewById<ImageButton>(R.id.earth)
-        val mars = findViewById<ImageButton>(R.id.mars)
-        val saturn = findViewById<ImageButton>(R.id.saturn)
+        val earth = findViewById<AppCompatImageView>(R.id.earth)
+        val mars = findViewById<AppCompatImageView>(R.id.mars)
+        val saturn = findViewById<AppCompatImageView>(R.id.saturn)
 
         val animEatch = createCircleAnim(earth, TimeUnit.SECONDS.toMillis(2))
         val animMars = createCircleAnim(mars, TimeUnit.SECONDS.toMillis(6))
